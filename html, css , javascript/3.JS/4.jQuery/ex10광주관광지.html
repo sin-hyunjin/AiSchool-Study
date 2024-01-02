@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/jquery-3.7.0.js"></script>
+  </head>
+  <body>
+    <div id="map" style="width: 100%; height: 350px"></div>
+    <button id="getGjBtn">광주관광지 가져오기</button>
+    <button id="randomGhBtn" style="display: none">오늘의 관광지 추천</button>
+    <div id="randomContainer"></div>
+
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e22048a543940fb2e0cf8acabc710434"
+    ></script>
+    <script>
+      // 마커를 표시할 위치와 title 객체 배열입니다
+      var positions = [
+        {
+          title: "인공지능사관학교",
+          latlng: new kakao.maps.LatLng(35.1486, 126.9223),
+        },
+        {
+          title: "KT구내식당",
+          latlng: new kakao.maps.LatLng(35.1456, 126.9236),
+        },
+        {
+          title: "코코로나인",
+          latlng: new kakao.maps.LatLng(35.1478, 126.9257),
+        },
+      ];
+
+      const makeMap = () => {
+        var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+          mapOption = {
+            center: new kakao.maps.LatLng(35.1486, 126.9223), // 지도의 중심좌표
+            level: 3, // 지도의 확대 레벨
+          };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커 이미지의 이미지 주소입니다
+        var imageSrc =
+          "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+        for (var i = 0; i < positions.length; i++) {
+          // 마커 이미지의 이미지 크기 입니다
+          var imageSize = new kakao.maps.Size(24, 35);
+
+          // 마커 이미지를 생성합니다
+          var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+          // 마커를 생성합니다
+          var marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: positions[i].latlng, // 마커를 표시할 위치
+            title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+            image: markerImage, // 마커 이미지
+          });
+        }
+      };
+
+      /* 광주 관광지 가져오기 버튼을 클릭시, console창에 광주 관광지 데이터가 뜨도록 할 것
+      JQuery + aJax
+      */
+
+      $("#getGjBtn").on("click", () => {
+        let openAPI_URL =
+          "http://apis.data.go.kr/6290000/tourdestbaseinfo/gettourdestbaseinfo?serviceKey=hWLib%2FtB5F0P2aFGwqhkLMkrcPOaxPBeLU9DaPNxj0ioWuSeQFpAEl6SYHJ3Bd2cfksJSD5t4ih6fQzA5KRePg%3D%3D&type=json&pageNo=1&numOfRows=1000";
+
+        $("#randomGhBtn").css("display", "inline");
+
+        $.ajax({
+          url: openAPI_URL,
+          success: (result) => {
+            // 데이터 안에 포홤되어 있는 83개의 데이터를 position이라는 배열에 추가
+            for (let i = 0; i < result.TourDestBaseInfo.length; i++) {
+              // console.log(result.TourDestBaseInfo[i].tourDestNm);
+              // console.log(result.TourDestBaseInfo[i].lat);
+              // console.log(result.TourDestBaseInfo[i].lng);
+              positions.push({
+                title: result.TourDestBaseInfo[i].tourDestNm, //이름표시
+                latlng: new kakao.maps.LatLng(
+                  result.TourDestBaseInfo[i].lat, //위도 표시
+                  result.TourDestBaseInfo[i].lng //경도 표시
+                ),
+              });
+            }
+            console.log(positions);
+            makeMap(35.1465, 126.9222, 9);
+          },
+          error: () => {
+            alert("Error");
+          },
+        });
+      });
+
+      $("#randomGhBtn").on("click", () => {
+        let ranNum = parseInt(Math.random() * positions.length);
+        // console.log("randNum", positions[ranNum]);
+
+        $("#randomContainer").html(
+          `<h2>오늘의 추천 관광지는 ${positions[ranNum].title}</h2>`
+        );
+        makeMap(positions[ranNum].latlng.La, positions[ranNum].latlng.Ma, 3);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js 자료형</title>
+  </head>
+  <body>
+    <script>
+      /* 자료형 : 데이터의 형태
+      1) 기본유형
+        (1) 숫자형 : 정수, 실수 등 산술연산이 가능한 자료형(number) */
+      //타입을 알수 있는방법?
+      /*  a.typof()
+            b.console창의 색상 */
+      let num1 = 3;
+      console.log("숫자형 : ", typeof num1);
+      let num2 = 3.14;
+      console.log("숫자형 : ", num2);
+
+      //(2) 문자형(string)
+      //큰 따옴표(""), 작은따옴표('')로 묶어서 나타내는 데이터
+      //숫자를 따옴표로 감싸더라도 문자가 된다.
+      //prompt 리턴타입은 string형태
+      let my_Name = "신현진";
+      console.log("문자형 : ", my_Name);
+
+      //(3) 논리형(boolean)
+      // 참(TURE), 거짓(false) 2가지 값만 존재하는 유형
+      // 이떄 true,false 는 모두 소문자로 표현
+      // "" 안에 담으면 true 문자열이 된다.
+      let isOpen = true;
+      console.log("논리형 :", isOpen);
+
+      // 2.특수유형
+      // (1)undefined  : 정의가 되지 않았다. (존재 자체가 없다.)
+      // =>선언만 되고, 초기 값이 할당되지 않은상태
+      // js는 동적으로 타입을 정의해주는 언어이기 떄문에
+      // 처음에는 데이터를 넣지 않고 선언한다면 undefined 의 형태가 됨
+
+      let data; // 절대로 이렇게 선언하지 말 것
+      console.log("undefined :", data);
+
+      // (2)null : 의도적으로 그 공간을 비워줄때
+      let money = 3000;
+      muney = null;
+      console.log("null :", null);
+    </script>
+  </body>
+</html>

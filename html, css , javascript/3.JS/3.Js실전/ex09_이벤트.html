@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="txt">h1태그 컨텐츠</h1>
+    <!-- 클릭했을 떄 실행시켜준다 -->
+    <!-- onclick에 할당된 값은 함수 자체가 아니라, 함수를 실행한 결과입니다. 
+      즉, onclick="popUp()"이라고 쓰면, popUp 함수가 바로 실행되고, 
+      그 반환값이 onclick에 할당됩니다. 만약 popUp 함수가 아무것도 반환하지 않는다면, 
+      onclick에는 undefined가 할당됩니다. -->
+    <button onclick="popUp()">직접 작성</button>
+    <button id="btn_han">핸들러용 버튼</button>
+    <button id="btn_lis">리스너용 버튼</button>
+    <button id="btn_event">이벤트 객체용 버튼</button>
+
+    <script>
+      /* EVENT = 특정 요소에 원하는 이벤트를 부여해 보자
+      Ex) click, mouseover, mouseout, change
+
+      eventHandler  /  eventListener
+      1) eventHandler
+        - 하나의 요소 당 하나의 이벤트만 부여 가능
+      2) eventListener
+        - 하나의 요소 당 여러개의 이벤트 부여 가능
+
+        Mission! 각각의 버튼을 클릭 시, id가 txt인 요소의 컨텐츠 값을 팝업창으로 띄워줄 것!
+        - 미션을 위한 준비물! 팝업창을 출력하는 함수
+        */
+      const popUp = () => {
+        let h1Tag = document.getElementById("txt");
+        alert(h1Tag.innerText);
+      };
+      const popUp2 = () => {
+        let h1Tag = document.getElementById("txt");
+        alert("두번째 팝업창", h1Tag.innerText);
+      };
+
+      // Case 1. html 태그에 직접 함수의 이름을 명시하는 방법
+      // <button onclick="popUp()">직접 작성</button>
+      // 단점 : 하나의 요소 당, 하나의 이벤트만 처리가능 , 요소에 함수명이 노출된다.
+
+      // Case 2. 이벤트 핸들러
+      // 만약 '핸들러용 버튼'을 클릭했을 때, popUp 함수를 호출
+      // popUp 함수를 호출
+      // 단점 : 하나의 이벤트만 처리가능, 1:1 이벤트를 처리
+      let btn1 = document.getElementById("btn_han");
+      console.log("btn1 :", btn1);
+      btn1.onclick = popUp; //이벤트핸들러 사용할 때 ()는 안친다. return값을 안주기위해
+      btn1.onclick = popUp2; //callback 함수 = 함수안의 함수
+
+      // Case 3. 이벤트 리스너
+      // addEventListener(이벤트,함수)
+      // 장점: 다중 이벤트 등록 가능 / 단점: 코드가 길어진다.
+      let btn2 = document.getElementById("btn_lis");
+      btn2.addEventListener("click", popUp);
+      btn2.addEventListener("click", popUp2);
+
+      //ex10이벤트실습.html 에 있는 익명함수! 참고할 것!
+
+      // Case04. 이벤트 객체
+      document
+        .querySelector("#btn_event")
+        .addEventListener("click", (enent) => {
+          console.log("이벤트 객체 :", event.target.innerText); //이벤트 타겟을 잡으면 그 주체가 뜬다.(매개변수 필수 작성)
+        });
+    </script>
+  </body>
+</html>

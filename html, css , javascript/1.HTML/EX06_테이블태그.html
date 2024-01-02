@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 테이블 (tabke) : 테이블을 만들겠다고 선언하는 공간 -->
+    <table border="1px solid black">
+      <caption>
+        <b>카페 메뉴</b>
+      </caption>
+      <!-- table header (th)
+        표의 헤더부분을 작성할 때 용이하며 글자굵기 가운데 정렬 -->
+
+      <thead>
+        <tr>
+          <th>메뉴</th>
+          <th colspan="2">가격과 장소</th>
+        </tr>
+      </thead>
+
+      <!-- 테이블을 한 행을 생성하는 방법 : table row(tr) -->
+      <tr>
+        <!-- 테이블의 한 칸, 데이터를 넣어주는 방법 table data(td) -->
+        <td>스페니쉬 연유라떼</td>
+        <td rowspan="2">4500원</td>
+        <td>twosomeplace</td>
+      </tr>
+
+      <!-- 표 병합기능!
+    1) 위, 아래를 병합 => table row 끼리 병합 => rowspan = "병합할 크기"
+    2) 좌, 우를 병합 => colspan = "병합할 크기"-->
+      <tr>
+        <td>클래식 클럽</td>
+
+        <td>엔제리너스</td>
+      </tr>
+      <tr>
+        <td>초콜릿 라떼</td>
+        <td>5000원</td>
+        <td>메가 커피</td>
+      </tr>
+      <!-- tip!  tr>td*3 -->
+    </table>
+    <h3>실습</h3>
+    <table border="2px solid black" style="border-collapse: collapse">
+      <thead>
+        <tr bgcolor="yellow">
+          <th>이름</th>
+          <th colspan="2">성별 / 주소</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td>황해도</td>
+        <td>남자</td>
+        <td>전주</td>
+        <td rowspan="4"></td>
+      </tr>
+      <tr>
+        <td>선영표</td>
+        <td>여자</td>
+        <td>광주</td>
+      </tr>
+      <tr>
+        <td>정봉균</td>
+        <td>남자</td>
+        <td>순천</td>
+      </tr>
+      <tr>
+        <td>신현진</td>
+        <td>남자</td>
+        <td>해남</td>
+      </tr>
+    </table>
+  </body>
+</html>

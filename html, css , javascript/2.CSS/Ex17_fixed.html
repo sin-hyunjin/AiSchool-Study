@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 2000px;
+      }
+      /* 박스전체크기 */
+      #parent {
+        width: 200px;
+        height: 600px;
+        background-color: gray;
+      }
+      /* 각각의 박스 크키 */
+      .box {
+        width: 200px;
+        height: 200px;
+      }
+      .child1 {
+        background-color: #ff4949;
+      }
+      .child2 {
+        background-color: #f9ca24;
+      }
+      .child3 {
+        background-color: #0984e3;
+        text-align: center;
+        /* 사이에 간격을 주는 방법 (한줄의 문장만 가능)
+        -해당 요소의 높이 값과 동일하게 적용했을 때 수직방향으로 가운데 정렬*/
+        line-height: 200px;
+        font-size: 30px;
+        font-weight: bold;
+
+        /* 화면에서 같이 이동함 */
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        border-radius: 50px;
+      }
+      .child3 > a {
+        font-size: 30px;
+        font-weight: bold;
+        color: aliceblue;
+        /* 꾸며주는걸 없앰 */
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div#parent>div*3 -->
+    <div id="parent">
+      <div class="box child1"></div>
+      <div class="box child2" id="child2"></div>
+      <!-- 상단으로 이동시키는 버튼으로 만들예정 -->
+      <!-- href 경로가 없다면 #으로 정해줌 -->
+      <!-- class는 이동이 안되고 id값으로만 이동가능 -->
+      <div class="box child3"><a href="#child2">Top</a></div>
+    </div>
+  </body>
+</html>

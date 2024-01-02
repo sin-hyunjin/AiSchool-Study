@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 5px solid lightgreen;
+      }
+      img {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="../../img/코딩1.png" alt="" />
+    </div>
+
+    <button id="btn1">부모요소 내부 앞쪽에 추가</button>
+    <button id="btn2">부모요소 내부 뒷쪽에 추가</button>
+    <button id="btn3">부모요소 외부 앞쪽에 추가</button>
+    <button id="btn4">부모요소 외부 뒷쪽에 추가</button>
+    <button id="btn5">img태그 삭제</button>
+    <button id="btn6">한 요소를 비워주기</button>
+    <button id="btn7">부모요소를 추가하기</button>
+
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+      $("#btn1").on("click", () => {
+        // 1. prepend : 해당 요소 앞쪽에 요소를 추가하는 방법
+        $("div").prepend("<img src = '../../img/코딩2.png'>");
+      });
+
+      $("#btn2").on("click", () => {
+        // 2. append : 해당 요소 뒤쪽에 요소를 추가하는 방법
+        // 범위 : 요소 내부
+        $("div").append("<img src = '../../img/코딩3.png'>");
+      });
+      $("#btn3").on("click", () => {
+        //3. before : 해당요소 바깥 앞쪽에 요소를 추가하는 방법
+        $("div").before("<img src = '../../img/코딩4.png'>");
+      });
+      $("#btn4").on("click", () => {
+        //4. after : 해당요소 바깥 뒤쪽에 요소를 추가하는 방법
+        $("div").after("<img src = '../../img/코딩5.png'>");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+# jupyter 
+
+.ipynb_checkpoints
+
+Machine_Learning/.ipynb_checkpoints
+
+# 확장자 전체 무시 
+
+Machine_Learning/Data/bmi_500.csv
+
+*.csv
+
+*.txt
+
+*.pdf
+
+*.DS_Store
+
+*.dot 
+
+*.png
+
+Machine_Learning/tree.dot
+
+

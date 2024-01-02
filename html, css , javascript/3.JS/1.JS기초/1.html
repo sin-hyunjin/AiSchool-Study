@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = parseInt(prompt());
+      // 마지막 원소구하기 153
+      // String(num).length - 1은 num의 마지막 자리의 인덱스이고,
+      // 1은 길이이므로, 마지막 자리만 추출하게 됩니다.
+      let c = String(num).substr(String(num).length - 1, 1);
+      //  c = 3
+      if (c >= 5) {
+        console.log(
+          // num이 153이면, String(num).substring(0, String(num).length - 1)은 "15"가 됩니다.
+          // 예를 들어, num이 153이면, parseInt(String(num).substring(0, String(num).length - 1)) + 1은 16이 됩니다.
+          (parseInt(String(num).substring(0, String(num).length - 1)) + 1) * 10
+        );
+      } else {
+        /*num이 153이면, String(num).substring(0, String(num).length - 1)은 "15"가 됩니다.
+      그 다음에 *10을 하여 num의 마지막 자리를 제외한 나머지 부분을 십의 자리로 만듭니다. 이렇게 하면 num의 마지막 자리가 버려지게 됩니다.
+      예를 들어, num이 153이면, String(num).substring(0, String(num).length - 1) * 10은 150이 됩니다. */
+        console.log(String(num).substring(0, String(num).length - 1) * 10);
+      }
+    </script>
+  </body>
+</html>

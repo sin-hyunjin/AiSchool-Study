@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 자손선택자 */
+      dl span {
+        color: saddlebrown;
+      }
+      dl li {
+        color: whitesmoke;
+      }
+      /* ol 기준으로 자식선택자 span요소 선택 */
+      ol > span {
+        color: hotpink;
+      }
+      /* 첫번째 li요소를 기준으로 근접후행선택자를 활용하여 li요소 선택 */
+      /* 형제(근접후행)선택자 */
+      #first + li {
+        color: whitesmoke;
+      }
+
+      /* 클래스이름으로 접근할 떄, 요소이름을 앞에 붙여준다.
+      다른 요소에 동일한 클래스 이름이 사용되고 있을 수 있기 때문 */
+      li.first + li {
+        color: white;
+      }
+
+      /* 첫번쨰 li요소를 기준으로 후행선택자를 활용하여 모든li요소의 글자색을 변경 */
+      /* 기준이 되는 요소는 스타일이 반영되지 않는다. */
+      #first ~ li {
+        background-color: rgb(41, 138, 155);
+      }
+    </style>
+  </head>
+  <body>
+    <dl>
+      <dt>연수생 수칙</dt>
+      <dd>
+        <ol>
+          <li id="first" class="first">지각하지 않기</li>
+          <li>결석하지 않기</li>
+          <span>(불가피할 땐 꼭 담당연구원에게 미리 말하기)</span>
+          <li>복습하기</li>
+        </ol>
+      </dd>
+    </dl>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/jquery-3.7.0.js"></script>
+  </head>
+  <body>
+    <div id="result-area"></div>
+
+    <!-- <table border="1px solid">
+      <th>1</th>
+      <th>1</th>
+      <th>1</th>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    </table> -->
+
+    <button id="req-button">데이터 요청</button>
+
+    <script>
+      //    $("#result-area")=() =>{
+      //     `   <table border="1px solid">
+      //       <th>순위</th>
+      //       <th>영화명</th>
+      //       <th>개봉일</th>
+      //       <tr>
+      //         <td>${movieList[i].rank}</td>
+      //         <td>${movieList[i].movieNm}</td>
+      //         <td>${movieList[i].openDt}</td>
+      //        </tr>
+      //       </table>`
+      // }
+
+      // 데이터 요청 클릭 시, 동작하는 이벤트 적용해보기!
+      $("#req-button").on("click", () => {
+        // alert("클릭");
+        let movieURL =
+          "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20230621";
+
+        // $.ajax() : 비동기통신을 지원하는 함수 / 통신에 관련된 함수
+        $.ajax({
+          url: movieURL,
+          success: (result) => {
+            // alert("요청성공");
+            // console.log(result);
+            // console.log(result.boxOfficeResult.dailyBoxOfficeList);
+            let movieList = result.boxOfficeResult.dailyBoxOfficeList;
+
+            //  js에서도 코드는 위에서 아래순서로 움직이기 떄문에
+            // 태그를 만들면 js에서도 선택자로 사용할 수 있다.
+            $("#result-area").append(` <table id="td" border="1px solid">
+              <th>순위</th>
+              <th>영화명</th>
+              <th>개봉일</th></table>`);
+
+            for (let i = 0; i < movieList.length; i++) {
+              $("table").append(`
+              <tr>
+               <td>${movieList[i].rank}</td>
+               <td>${movieList[i].movieNm}</td>
+               <td>${movieList[i].openDt}</td>
+              </tr>`);
+            }
+
+            //박스오피스순위, 영화이름, 개봉일을 콘솔창에 출력해보기!
+            //
+          },
+          error: () => {
+            alert("요청실패");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 리팩토링
+      // 2. 선택정렬
+      // - 기준 위치를 정한다.
+      // - 기준 위치에 어울리는 값을 할당하고 step 종료
+      let arr = [13, 56, 9, 1, 23];
+
+      // 1. Step -> 기준 0
+
+      for (let j = 0; j <= arr.length - 1; j++) {
+        // arr[j]를 base변수에 담고 ,  arr[0] 부터 arr.length -1 까지 반복 실행
+        let base = arr[j];
+        for (let i = j + 1; i <= arr.length - 1; i++) {
+          //  base[0] > arr[1]이 크면 temp 변수에 base[0]값을 담는다.
+          if (base > arr[i]) {
+            let temp = base;
+            // base 변수에 arr[i] 값 즉 더 큰 값을
+            base = arr[i];
+            arr[i] = temp;
+          }
+          console.log(arr);
+        }
+        // arr[0]~ [n]
+        arr[j] = base;
+        console.log(arr);
+        console.log("==========");
+      }
+
+      //----리팩토링----
+      // Step(2)
+      // base = arr[1];
+
+      // for (let i = 2; i <= 4; i++) {
+      //   if (base > arr[i]) {
+      //     let temp = base;
+      //     base = arr[i];
+      //     arr[i] = temp;
+      //   }
+      // }
+      // arr[1] = base;
+      // console.log(arr);
+      // console.log("==========");
+
+      // base = arr[2];
+
+      // for (let i = 3; i <= 4; i++) {
+      //   if (base > arr[i]) {
+      //     let temp = base;
+      //     base = arr[i];
+      //     arr[i] = temp;
+      //   }
+      // }
+      // arr[2] = base;
+      // console.log(arr);
+      // console.log("==========");
+
+      // base = arr[3];
+
+      // for (let i = 4; i <= 4; i++) {
+      //   if (base > arr[i]) {
+      //     let temp = base;
+      //     base = arr[i];
+      //     arr[i] = temp;
+      //   }
+      // }
+      // arr[3] = base;
+      // console.log(arr);
+      // console.log("==========");
+      // 리팩토링
+      //(1) step (1)
+      // if (base > arr[1]) {
+      //   let temp = base;
+      //   base = arr[1];
+      //   arr[1] = temp;
+      // }
+      // console.log(arr);
+
+      // if (base > arr[2]) {
+      //   let temp = base;
+      //   base = arr[2];
+      //   arr[2] = temp;
+      // }
+      // console.log(arr);
+
+      // if (base > arr[3]) {
+      //   let temp = base;
+      //   base = arr[3];
+      //   arr[3] = temp;
+      // }
+      // console.log(arr);
+
+      // if (base > arr[4]) {
+      //   let temp = base;
+      //   base = arr[4];
+      //   arr[4] = temp;
+      // }
+      // console.log(arr);
+
+      // arr[0] = base;
+      // console.log(arr);
+    </script>
+  </body>
+</html>

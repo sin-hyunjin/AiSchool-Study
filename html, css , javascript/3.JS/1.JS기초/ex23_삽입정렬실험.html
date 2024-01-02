@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [5, 3, 16, 2, 12, 10];
+      //  box가 더 클 떄 4순환
+
+      for (let i = 1; i < arr.length; i++) {
+        // 현재 요소를 임시 변수에 저장
+        let box = arr[i];
+        // 현재 요소의 앞부분을 탐색할 인덱스를 j에 저장
+        let j = i - 1;
+        // j가 0 이상이고, j번째 요소가 box보다 크면
+        while (j >= 0 && arr[j] > box) {
+          // j번째 요소를 오른쪽으로 한 칸 이동
+          arr[j + 1] = arr[j];
+          // j를 감소시킴
+          j--;
+        }
+        // 반복문이 끝나면, j + 1번째 위치가 box가 들어갈 자리임
+        arr[j + 1] = box;
+      }
+      console.log(arr);
+    </script>
+  </body>
+</html>

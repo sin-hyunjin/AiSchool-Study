@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 입력창
+      let num = prompt();
+      // 백의 자리 이하는 없앤다.
+      num -= num % 100;
+      console.log("백의 자리 이하 버린 결과 >>", num);
+
+      // 사람마다 생각하는 방식이 다르다.
+      let num1 = 312;
+      num1 = parseInt(num / 100);
+      console.log("결과 :", num1 * 100);
+    </script>
+  </body>
+</html>

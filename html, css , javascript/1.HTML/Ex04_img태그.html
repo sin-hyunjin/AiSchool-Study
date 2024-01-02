@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 이미지태그 : 웹 문서에 이미지를 보여줄 떄 사용하는 태그  -->
+    <!-- 데이터가 많기 떄문에 서버별로 데이터를 관리한다 -->
+    <!-- src 속성 : 이미지 경로 
+        alt 속성 : 이미지가 나타나지 않을 떄 텍스트로 대체하는 방법 -->
+
+    <img
+      src="https://www.readersnews.com/news/photo/202305/108912_78152_1811.jpg"
+      alt="오류가 발생했습니다."
+    />
+    <!-- 
+    절대경로: 어떤 폴더나 파일이 가진 고유한 경로 (외부경로에 대한 자료만 쓸 수 있다.)
+    상대경로 : 특정 위치를 기준으로 폴더나 파일을 접근하는 경로 
+    현재 위치기준 : ./폴더명/파일명.확장자 or /파일면.확장자   ./ : 바로 접근가능
+    루트 위치 기준 : 최상위폴더에서 접근하는 방식
+    상위 위치 기준 : 상위폴더로 올라가서 접근하는 방식 -> /폴더명/파일명.확장자 or /파일명.확장자     ../ 상위 폴더로 올라가게끔 한다.
+     -->
+    <img
+      src="/img/푸바오2.jpg"
+      alt="오류가 발생하였습니다."
+      width="200px"
+      height="200px"
+    />
+    <img
+      src="/img/푸바오 _hi.jpeg"
+      alt="오류가 발생하였습니다."
+      width="200px"
+      height="200px"
+    />
+    <img
+      src="../img/푸바오1.jpeg"
+      alt="오류가 발생하였습니다.
+    "
+      width="200px"
+      height="200px"
+    />
+  </body>
+</html>

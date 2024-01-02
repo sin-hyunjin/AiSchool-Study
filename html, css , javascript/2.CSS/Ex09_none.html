@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #answer {
+        display: none;
+      }
+
+      /* 
+      1. id가 question인 요소 위에 마우스를 올리면  =>question:hover
+      2. answer요소가 보이도록 설정  => +#answer */
+
+      #question:active ~ #answer {
+        display: inline-block;
+        background-color: slateblue;
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Quiz!</h3>
+    <span id="question">Q, 여러분은 비오는거 좋아하시나요?</span> <br />
+    <span id="answer">A. 좋아하지 않습니다.</span>
+  </body>
+</html>

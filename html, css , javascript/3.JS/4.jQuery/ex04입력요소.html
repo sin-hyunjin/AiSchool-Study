@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="" href="../../" />
+    <title>Document</title>
+  </head>
+  <body>
+    <from>
+      <input type="text" id="btn" class="" />
+      <select name="" id="fruits">
+        <option value="stberry">딸기</option>
+        <option value="mango">망고</option>
+        <option value="pineapple">파인애플</option>
+      </select>
+      <input type="button" id="" class="" value="출력하기" />
+    </from>
+    <p id="result" class=""></p>
+    <p>선택한 과일 : <span id="selected_fruit"></span></p>
+
+    <!-- js -->
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+      //속성선택자
+      let array = [];
+      $("input[type=button]").on("click", () => {
+        // alert("클릭");
+        // value => val() 입력요소 가져오기
+        let $userInput = $("input[type=text]").val();
+        // console.log($userInput.val());
+
+        $("#result").text($userInput);
+      });
+
+      // select태그의 내용이 바뀔 때 동작하는 이벤트
+      $("#fruits").on("change", () => {
+        console.log($("#fruits").val());
+
+        // 선택한 과일의 정보를 웹 페이지에 출력하기!
+        $("#selected_fruit").text($("#fruits").val());
+      });
+    </script>
+  </body>
+</html>

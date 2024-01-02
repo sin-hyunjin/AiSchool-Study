@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //순차탐색
+      // 16은 배열은 3번째 위치에 있습니다.
+      // 16은 배열에 존재하지 않습니다.
+
+      let arr = [20, 51, 4, 16, 99, 102, 8, 34];
+      let find = 34;
+      // if (find == arr[1]) {
+      //   document.write("배열에 없다");
+      // } else {
+      //   document.write("배열에 있다.");
+      // }
+      // if (find == arr[2]) {
+      //   document.write("배열에 없다");
+      // } else {
+      //   document.write("배열에 있다.");
+      // }
+      // if (find == arr[3]) {
+      //   document.write("배열에 없다");
+      // } else {
+      //   document.write("배열에 있다.");
+      // }
+      // if (find == arr[4]) {
+      //   document.write("배열에 없다");
+      // } else {
+      //   document.write("배열에 있다.");
+      //
+
+      // for (let i = 0; i <= arr.length; i++) {
+      //   let box = arr[0];
+      //   if (box != find) {
+      //     `${find}는 배열에 존재하지 않습니다.`;
+      //   } else {
+      //     console.log(`${find}는 배열의 ${box}번쨰 위치에 있습니다.`);
+      //   }
+      // }
+      // ==============================================
+      for (let i = 0; i <= arr.length; i++) {
+        if (find == arr[i]) {
+          console.log(`${find}는 배열의 ${i}번쨰 위치에 있습니다.`);
+          break;
+        }
+        if (i == arr.length - 1) {
+          console.log(`${find}는 배열에 존재하지 않습니다.`);
+        }
+      }
+
+      // ==============================================
+      let index = -1;
+      for (let i = 0; i < arr.length; i++) {
+        if (find == arr[i]) {
+          index = i;
+          break;
+        }
+      }
+      if (index == -1) {
+        document.write("배열에 없다");
+      } else {
+        document.write(`${find}는 배열의 ${index}번쨰 위치에 있습니다.`);
+      }
+    </script>
+  </body>
+</html>

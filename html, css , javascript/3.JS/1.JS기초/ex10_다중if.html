@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* ARS 프로그램을 제작해보자! - 다중 if문 사용
+      처리할 로직이 3개 이상일 떄
+
+      - 사용자에게 숫자를 입력받는다.
+          "이용하게 서비를 입력해주세요 ([1]강의조회 [2] 수강신청 [3] 상담원 연결"
+
+      조건1) 사용자가 1을 입력 시, "강의 조회"
+          2) 사용자가 2를 입력 시, "수강 신청"
+          3) 사용자가 3을 입력 시, "상담원 연결"
+          4) 그 외 입력시, "잘못 입력하셨습니다. "
+          // 팝업창으로 띄워주기!!
+      */
+
+      // Case1) 다중 if문
+
+      // let user_Call = parseInt(prompt("이용하실 서비스를 입력해주세요."));
+      // if (user_Call === 1) {
+      //   alert("강의 조회");
+      // } else if (user_Call === 2) {
+      //   alert("수강 신청");
+      // } else if (user_Call === 3) {
+      //   alert("상담원 연결");
+      // } else alert("잘못 입력하셨습니다.");
+
+      // Case2) swich문
+
+      // swich(조건의 대상)
+      //{case"조건 값1: 로직작성"
+      //                  break;
+      // case"조건 값2: 로직작성"
+      //                  break;
+      // default : 로직작성}
+
+      let num = parseInt(prompt("이용하실 서비스를 입력해주세요."));
+      switch (num) {
+        case 1:
+          alert("강의 조회");
+          break;
+        case 2:
+          alert("상담원 연결");
+          break;
+        case 3:
+          alert("수강 신청");
+          break;
+        default:
+          alert("잘못 입력하셨습니다.");
+      }
+    </script>
+  </body>
+</html>

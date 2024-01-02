@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Javescript</h1>
+    <script>
+      // JavaScript : 웹페이지를 동적으로 제어하기 위해 고안된 언어
+      // (1) body 태그 가장 하단에 작성한다.body
+      // 다중 주석처리 : /* */
+
+      /* 1. 출력문 */
+      // a.console.log - console창에 출력
+      // 개발자 도구에 -> console   ⭐️⭐️⭐️⭐️⭐️
+      console.log("Hello World!");
+      // a-2  console.error() 에러 확인을 위해 사용
+      console.log("Error!!");
+      // a-3 console.warm() 경고창
+      console.warn("Wraning!");
+      // b.document.write( ) - 문서에 출력
+      // 거의 사용되지 않는다 ⭐️
+      document.write("My name is hyunjin");
+      // c.alert() - 알림 팝업창에 출력 ⭐️⭐️⭐️⭐️
+      alert("pop!");
+
+      /* 2.입력문 */
+      // a. 입력창을 통한 입력문(주관식) : prompt
+      // 리턴 타입이 문자형태(string)
+      // 숫자를 적더라도 prompt를 통해 받은 값이라면 무조건 string형태
+      // 변수설정
+      var dinner = prompt("어제 저녁 뭐드셨나요?", "닭가슴살");
+      console.log("어제 저녁은", dinner, "입니다.");
+      // 예/ 아니오를 묻는 입력문 : confirm(메세지)
+      // return type : true / false  (boolean)
+      var lunch = confirm("그럼 저랑 오늘 점심드실래요?");
+      console.log(lunch);
+
+      /* javascript 외부 스크립트 파일 연결*/
+      // <script src="외부 스크립트 파일 경로"> <script>
+    </script>
+  </body>
+</html>

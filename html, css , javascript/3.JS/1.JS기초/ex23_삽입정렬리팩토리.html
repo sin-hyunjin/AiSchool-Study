@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  삽입정렬 규칙찾기
+      /*
+      규칙1 : 인덱스 0에서 시작하지 않는다.
+      규칙2 : 1순환이 넘어가면 인덱스 + 1
+      규칙3 : arr[] > box  =>  box보다 인덱스가 클 시  인덱스 -1 
+              box가 더크다면 인덱스 유지 
+      규칙4 : 
+      */
+      //        0   1  2  3   4
+      let arr = [4, 3, 2, 12, 10];
+
+      // ======== 1순환 ========
+      // [ 4, 3, 2, 12, 10]
+      let box = arr[1];
+      //  4       3
+      if (arr[0] > box) {
+        let space = arr[1]; //3
+        box = arr[0]; // 4
+        arr[0] = space; // 3
+        arr[1] = box; //4
+      }
+      console.log(arr);
+      console.log("===========");
+
+      // 222222222222222222222222222222222222222222222222222222222222222222
+      // ========= 2.1순환 =========
+      // 1순환 후 [3, 4, 2, 12 ,10] 이제 인덱스2가  1 , 0 순으로 비교해야함
+      //       2
+      box = arr[2];
+      //  4         2
+      if (arr[1] > box) {
+        let space = arr[2]; //2
+        box = arr[1]; //4
+        arr[1] = space; //2
+        arr[2] = box; //4
+      }
+      console.log(arr);
+      console.log("===========");
+
+      // ========= 2.2순환 =========
+      // 2.1순환 후 [3, 2, 4, 12 ,10] 이제 인덱스2가  1 , 0 순으로 비교해야함
+      //        2
+      box = arr[1];
+      //   3         2
+      if (arr[0] > box) {
+        let space = arr[1];
+        box = arr[0];
+        arr[0] = space;
+        arr[1] = box;
+      }
+      console.log(arr);
+      console.log("===========");
+
+      // 33333333333333333333333333333333333333333333333333333333333333333333
+      // ========= 3.1순환 =========
+      // 2.2순환 후 [2, 3, 4, 12 ,10] 이제 인덱스3이  2, 1 , 0 순으로 비교해야함
+      //        12
+      box = arr[3];
+      //     4     12
+      if (arr[2] > box) {
+        let space = arr[2]; // 4
+        box = arr[3]; //12
+        arr[2] = space; //4
+        arr[3] = box; // 12
+      }
+      console.log(arr);
+      console.log("===========");
+
+      // ========= 3.2순환 =========
+      // 3.1순환 후 [2, 3, 4, 12 ,10] 이제 인덱스3이  2, 1 , 0 순으로 비교해야함
+      //
+      box = arr[2];
+      //     3     12
+      if (arr[1] > box) {
+        let space = arr[1];
+        box = arr[3];
+        arr[1] = space;
+        arr[3] = box;
+      }
+      console.log(arr);
+      console.log("===========");
+
+      // ========= 3.3순환 =========
+      // 3.2순환 후 [2, 3, 4, 12 ,10] 이제 인덱스3이  2, 1 , 0 순으로 비교해야함
+      //
+      box = arr[1];
+      //     2     12
+      if (arr[0] > box) {
+        let space = arr[0];
+        box = arr[3];
+        arr[0] = space;
+        arr[3] = box;
+      }
+      console.log(arr);
+      console.log("===========");
+
+      //44444444444444444444444444444444444444444444444444444444444444
+
+      // ========= 4.1순환 =========
+      // 3.3순환 후 [2, 3, 4, 12 ,10] 이제 인덱스4이  3, 2, 1 , 0 순으로 비교해야함
+      //
+
+      box = arr[4];
+      //     12     10
+      if (arr[3] > box) {
+        let space = arr[4]; // 10
+        box = arr[3]; // 12
+        arr[3] = space; // 10
+        arr[4] = box; //  12
+      }
+      console.log(arr);
+      console.log("===========");
+
+      // ========= 4.2순환 =========
+      // 4.1순환 후 [2, 3, 4, 10 ,12] 이제 인덱스4이  3, 2, 1 , 0 순으로 비교해야함
+      //
+      box = arr[3];
+      //     4     10
+      if (arr[2] > box) {
+        //실행되지 않음
+        // let space = arr[2];
+        // box = arr[3];
+        // arr[2] = space;
+        // arr[3] = box;
+      }
+      console.log(arr);
+      console.log("===========");
+
+      // ========= 4.3순환 =========
+      // 4.2순환 후 [2, 3, 4, 10 ,12] 이제 인덱스4이  3, 2, 1 , 0 순으로 비교해야함
+      //
+      box = arr[2];
+      //     3    10
+      if (arr[1] > box) {
+        //실행되지 않음
+        // let space = arr[1];
+        // box = arr[3];
+        // arr[1] = space;
+        // arr[3] = box;
+      }
+      console.log(arr);
+      console.log("===========");
+      // ========= 4.4순환 =========
+      // 4.2순환 후 [2, 3, 4, 10 ,12] 이제 인덱스4이  3, 2, 1 , 0 순으로 비교해야함
+      //
+      box = arr[1];
+      //     3    10
+      if (arr[0] > box) {
+        //실행되지 않음
+        // let space = arr[0];
+        // box = arr[3];
+        // arr[0] = space;
+        // arr[3] = box;
+      }
+      console.log(arr);
+      console.log("===========");
+    </script>
+  </body>
+</html>

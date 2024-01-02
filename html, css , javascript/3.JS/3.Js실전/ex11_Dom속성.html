@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      집에 가는길
+      <input
+        autofocus
+        placeholder="이미지를 검색하세요!"
+        type="text"
+        id="inputText"
+        value=""
+        size="20"
+      />
+      <button id="inputBtn">GET!</button>
+    </h2>
+
+    <img width="300px" src="../../춘식이1.jpeg" alt="" />
+    <!-- <img width="400px" src="../../춘식이2.jpeg" alt="" /> -->
+
+    <br />
+    <button id="handlePic">Change!</button>
+    <script>
+      // input 태그 내에 사용자가 입력한 값을 가져와보자!
+      // 1-1) input 버튼에 이벤트 걸기
+      // 1-2) input 안에 있는 값을 가져올것
+      // 1-3) value 값을 세팅
+      document.querySelector("#inputBtn").addEventListener("click", () => {
+        let inputTag = document.querySelector("#inputText");
+        console.log("input tag : ", inputTag.value);
+      });
+
+      //img 태그에 접근하고 수정해보자!
+      // 1-1) 현재 imgTag의 속성 값을 출력
+      let pic1 = document.querySelectorAll("img")[0];
+      console.log("pic :", pic1);
+
+      // Case 1. getAttribute('속성이름') = 직관적이다
+      console.log("사진의 너비는 :", pic1.getAttribute("width"));
+      console.log("사진의 주소는 :", pic1.getAttribute("src"));
+      // Case 2. .속성이름
+      console.log("사진의 너비는?", pic1.width);
+      console.log("사진의 주소는?", pic1.src);
+
+      // 1-2) change 버튼을 클릭했을때, 사진이 변하도록
+      document.getElementById("handlePic").addEventListener("click", () => {
+        // Case 1.setAttribute('속성이름','바꿀값')
+        // pic1.setAttribute("width", "400px");
+        // Case 2. .속성이름 = "값"
+        // pic1.src = "../../춘식이2.jpeg";
+        // Quiz! 만약 버튼 클릭 시. 사진 1이라면 사진2라면 사진 1로 변경
+        console.log(pic1);
+        if (
+          pic1.src ==
+          "http://127.0.0.1:5500/%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%89%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%B51.jpeg"
+        ) {
+          pic1.src = "../../춘식이2.jpeg";
+        } else {
+          pic1.src =
+            "http://127.0.0.1:5500/%E1%84%8E%E1%85%AE%E1%86%AB%E1%84%89%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%B51.jpeg";
+        }
+      });
+    </script>
+  </body>
+</html>

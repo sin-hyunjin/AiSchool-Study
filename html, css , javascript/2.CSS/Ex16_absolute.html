@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 박스전체크기 */
+      #parent {
+        width: 500px;
+        height: 600px;
+        background-color: gray;
+        /*  relative -부모요소에 (기준점)포지션을 잡음 */
+        position: relative;
+      }
+      /* 각각의 박스 크키 */
+      .box {
+        width: 200px;
+        height: 200px;
+        color: aliceblue;
+      }
+      .child1 {
+        background-color: #ff4949;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+      .child2 {
+        background-color: #f9ca24;
+      }
+      .chlid3 {
+        background-color: #0984e3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div#parent>div*3 -->
+    <div id="parent">
+      <div class="box child1"></div>
+      <div class="box child2"></div>
+      <div class="box chlid3"></div>
+    </div>
+  </body>
+</html>

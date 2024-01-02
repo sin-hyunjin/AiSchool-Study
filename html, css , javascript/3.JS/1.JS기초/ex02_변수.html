@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("var :", name);
+      var name = "황해도";
+
+      /*  var / let / const 차이는 면접질문에 자주나온다.
+      A. let은 Es6문법에서 새로 등장한 키워드로,
+      호이스팅을 방지하기 위해 선언 전에는 일시적 
+      사각지대(Temporal Dead Zone; TDZ)에 데이터를 보관
+      협업을 하는데에 있어서 유리한 환경을 제공한다.
+
+        /* 변수에 대한 설명 */
+      /*변수 : 데이터를 담는 공간
+        변수키워드 변수이름 = 담을 데이터
+        ex) var num = 3
+
+        - 호이스팅 : 코드가 실행되면 메모리에
+                     변수/함수를 미리 저장해둔다.
+                     마치 출섯체크하듯이!
+                     => 협업에 있어서 불편함을 주게 됨
+
+          이를 방지하고자, ES6문법 이후 새로운 변수가 등장하게 된다.
+          -let, const
+        */
+
+      /*(0) var - 재선언이 가능 , 재할당 가능, 호이스팅 현상이 있다. */
+      var name = "신현진"; //선언
+      name = "황해도"; //할당
+      console.log("var :", name);
+
+      // (1) let
+      /*
+        let도 호이스팅(hoisting)이 일어나기는 하지만
+        TDZ(Temparal Death zone)에 저장을 해두고,
+        선언이 되기 전까지는 접근을 못하게 한다.
+        */
+
+      let name2 = "장원영";
+      // let name2 = "안유진"; 재선언 불가
+      name2 = "레이"; // let : 재할당 가능
+      console.log("let :", name2);
+
+      // (2) const : 상수, 변하면 안되는 값
+      const name3 = "김채원";
+      // const name3 = "사쿠라";  - 재선언 불가
+      // name3 = "카즈하" -재할당 불가
+
+      /* 변수 이름을 지어보자! 
+      1) 첫 글자로 숫자를 사용할 수 없다.(ex. 1name, 2apple)
+      2) 변수명의 첫글자는 영문자,$,_ 가능
+      3) js의 예약어는 변수명으로 사용할 수 없다. (ex. let, if ,for)
+      4) 의미없는 변수명은 추천X (ex. a,b,c,d)
+      5) camelCase(소문자 대문자섞어서 사용) , 
+      첫단어 소문자로시작/대문자로 시작
+      ex) JS - userName, python - user_name
+
+
+      */
+    </script>
+  </body>
+</html>

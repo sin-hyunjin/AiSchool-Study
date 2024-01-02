@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .btn {
+        /* 100  */
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        font-size: 32px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .box-style {
+        width: 400px;
+        height: 400px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">클릭</button>
+    <button class="btn1">이전으로 되돌리기</button>
+
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+      // addClass 스타일 속성 바꿀 값 추가
+      $(".btn").on("click", () => {
+        $(".btn").addClass("box-style").text("");
+      });
+      $(".btn1").on("click", () => {
+        $(".btn").removeClass("box-style").text("클릭");
+      });
+    </script>
+  </body>
+</html>

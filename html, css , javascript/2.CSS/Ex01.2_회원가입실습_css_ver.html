@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+      /* CSS언어를 사용할 수 있는 태그 */
+      /*
+      table태그: 너비 400px
+      (1)tr태그: 배경색 gray, 높이 50px (Step 1~4)
+      (2)tr태그: 배경색 whitesmoke, 높이 35px
+      td태그: 글자정렬 right (각 행의 제목에 해당하는 태그만)
+      textarea태그: 크기조절 none
+      td태그 : 가운데 정렬(마지막 요소)
+       */
+      table {
+        width: 400px;
+      }
+      .tr-tit {
+        background-color: gray;
+        height: 40px;
+      }
+      .tr-content {
+        background-color: whitesmoke;
+        height: 35px;
+      }
+      .tr-content > td:first-child {
+        text-align: right;
+      }
+      .tr-content:last-child > td {
+        text-align: center;
+      }
+    </style> -->
+    <!-- 외부 스타일시트를 불러와서 html에 적용하는방법 -->
+    <link rel="stylesheet" href="../CSS/Ex08_2실습.css" />
+  </head>
+  <body>
+    <!-- 회원가입 폼
+    => action : ~기능으로 간다 -->
+    <form action="#" method="get">
+      <table>
+        <!-- Steo 1 시작  -->
+        <!-- (tr>td*2)*4 -->
+        <!-- 복수영역을 잡고 싶다면 alt+클릭 -->
+        <tr class="tr-tit">
+          <th colspan="2" align="left">Step 1 : 아이디 / 비번 입력</th>
+        </tr>
+        <tr class="tr-content">
+          <td>아이디</td>
+          <td><input type="text" placeholder="아이디를 입력하세요." /></td>
+        </tr>
+        <tr class="tr-content">
+          <td>비밀번호</td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              id="ps"
+              placeholder="비밀번호를 입력해주세요."
+            />
+          </td>
+        </tr>
+        <tr class="tr-content">
+          <td>비밀번호 확인</td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              id="psc"
+              placeholder="다시 입력해주세요."
+            />
+          </td>
+        </tr>
+        <!-- Step 1 끝 -->
+        <!-- Steo 2 시작  -->
+        <!-- 개인정보 -->
+
+        <tr class="tr-tit">
+          <th colspan="2" align="left">Step 2 : 개인정보</th>
+        </tr>
+        <tr class="tr-content">
+          <td>성별</td>
+          <td>
+            남성<input type="radio" name="gender" value="man" /> 여성<input
+              type="radio"
+              name="gender"
+              value="woman"
+            />
+          </td>
+        </tr>
+        <tr class="tr-content">
+          <td>혈액형</td>
+          <td>
+            <select name="" id="">
+              <option value="">A</option>
+              <option value="">B</option>
+              <option value="">O</option>
+              <option value="">AB</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr class="tr-content">
+          <td>생일</td>
+          <td><input type="date" name="" id="" /></td>
+        </tr>
+        <!-- Step 2 끝 -->
+        <!-- Steo 3 시작  -->
+        <!-- 선호도 -->
+        <tr class="tr-tit">
+          <th colspan="2" align="left">Step 3 : 선호도</th>
+        </tr>
+        <tr class="tr-content">
+          <td>취미</td>
+          <td>
+            축구 <input type="checkbox" name="hobby" id="sc" />야구
+            <input type="checkbox" name="hobby" id="bs" />농구
+            <input type="checkbox" name="hobby" id="bk" />
+          </td>
+        </tr>
+        <tr class="tr-content">
+          <td>좋아하는 색깔</td>
+          <td><input type="color" name="" id="" /></td>
+        </tr>
+
+        <!-- Step 3 끝 -->
+        <!-- Steo 4 시작  -->
+        <!-- textarea => -->
+        <tr class="tr-tit">
+          <th colspan="2" align="left">Step 4 : 적고 싶은 말</th>
+        </tr>
+        <tr class="tr-content">
+          <td colspan="2 ">
+            <!-- style="resize:none;" 은 크기조절하지 못하게 지정 -->
+            <textarea cols="56" rows="5" style="resize: none"></textarea>
+          </td>
+        </tr>
+
+        <!-- Step 4 끝 -->
+        <!-- Step 5 시작 -->
+        <!-- 제출 / 초기화 버튼  -->
+        <tr class="tr-content">
+          <td colspan="2">
+            <input type="submit" value="제출" />
+            <input type="reset" value="초기화" />
+          </td>
+        </tr>
+        <!-- Step 5 끝 -->
+      </table>
+    </form>
+  </body>
+</html>

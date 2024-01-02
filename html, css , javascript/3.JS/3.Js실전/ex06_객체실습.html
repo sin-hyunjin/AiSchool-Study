@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 내가 가장 좋아하는 포켓몬 3마리를 소개해보자!
+      1. 포켓몬 리스트 (poketmonList) 라는 배열을 선언
+      2. 내가 좋아하는 포켓몬 3마리를 넣을 것
+       => name, type, age (객체)
+       ex) 메타몽, 변신, 1
+      3. 문서에 출력
+      // ============================================
+      1. 메타몽
+      - 변신속성
+      - 1살
+      2.피카츄
+      - 전기속성
+      - 2살
+      */
+
+      const poketmonList = [
+        {
+          name: "1. 잠만보",
+          img: "./img/잠만보.png",
+          type: "- 노말",
+          weight: "- 460Kg",
+        },
+        {
+          name: "2. 고라파덕",
+          img: "./img/고라파덕.png",
+          type: "- 물",
+          weight: "- 19.6Kg",
+        },
+        {
+          name: "3.  야돈",
+          img: "./img/야돈.png",
+          type: ["- 물", "- 에스퍼"],
+          weight: "- 36Kg",
+        },
+      ];
+
+      for (let i = 0; i <= 2; i++) {
+        if (i <= 1) {
+          document.write(
+            `${poketmonList[i].name}<br>
+        <img src = "${poketmonList[i].img}" style:  width = 200px ><br>
+        ${poketmonList[i].type} 속성<br>
+        ${poketmonList[i].weight}<br>
+        <hr width= 70% size=5 color=lightgray><br>`
+          );
+        } else if (i == 2) {
+          document.write(
+            // 포켓몬리스트에 2번쨰 인덱스가 오면 type  -에스퍼만 출력
+            `${poketmonList[i].name}<br>
+        <img src = "${poketmonList[i].img}" style:  width = 200px ><br>
+        ${poketmonList[i].type[i - 1]} 속성<br>   
+        ${poketmonList[i].weight}<br>
+        =================================<br>`
+          );
+        }
+      }
+      // document.write(
+      //   `${poketmonList[1].name}<br>
+      //   <img src = "${poketmonList[1].img}" style:  width = 200px ><br>
+      //   ${poketmonList[1].type}<br>
+      //   ${poketmonList[1].weight}<br>
+      //   =================================<br>`
+      // );
+      // document.write(
+      //   poketmonList[2].name,
+      //   "<br>",
+      //   `<img src = "${poketmonList[2].img}" style:  width = 200px > `,
+      //   "<br>",
+      //   poketmonList[2].type,
+      //   "<br>",
+      //   poketmonList[2].weight,
+      //   "<br>",
+      //   "=================================",
+      //   "<br>"
+      // );
+    </script>
+  </body>
+</html>

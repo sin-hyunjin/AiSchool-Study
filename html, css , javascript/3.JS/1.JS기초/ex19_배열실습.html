@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //배열 내 최댓값 구하기!
+      // 반복문
+
+      //  ---------- (1)
+      let numList = [20, 2121, 2592, 4294, 29, 295, 1024];
+      //결과 : 배열 내 최댓 값은 4294입니다 (maxNum)
+      let maxNum = 0;
+      for (let i = 0; i < numList.length; i++) {
+        if (numList[i] > maxNum) {
+          maxNum = numList[i];
+        }
+      }
+      document.write("배열 내 최댓값은 ", maxNum);
+
+      //  ---------  (2)
+      let maxNum2 = Math.max(...numList);
+      document.write("배열 내 최댓값은 ", maxNum2);
+    </script>
+  </body>
+</html>

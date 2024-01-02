@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 정렬 알고리즘
+      // 1. 버블정렬 (오름차순)
+
+      // 1.STEP
+
+      let arr = [10, 1, 6, 8, 3, 24, 9, 29, 10];
+
+      for (let j = arr.length - 1; j >= 0; j--) {
+        for (let i = 0; i < j; i++) {
+          // 내림차순은 부등호를 바꾼다/
+          if (arr[i] < arr[i + 1]) {
+            // 치환 (두 변수값을 바꿔줘야 할 때)
+            let temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+          }
+          2;
+          document.write(arr + "<br>");
+        }
+        document.write("==========================<br>");
+      }
+
+      // 함수의 이름만 쓰면 실행이된다.
+      bubble_Sort();
+      // 함수 만들기  => 코드의 재사용
+      function bubble_Sort() {
+        for (let j = arr.length - 1; j >= 0; j--) {
+          for (let i = 0; i < j; i++) {
+            // 내림차순은 부등호를 바꾼다/
+            if (arr[i] < arr[i + 1]) {
+              // 치환 (두 변수값을 바꿔줘야 할 때)
+              let temp = arr[i];
+              arr[i] = arr[i + 1];
+              arr[i + 1] = temp;
+            }
+            2;
+            document.write(arr + "<br>");
+          }
+          document.write("==========================<br>");
+        }
+      }
+
+      // for (let i = 0; i <= 3; i++) {
+      //   if (arr[i] > arr[i + 1]) {
+      //     // 치환 (두 변수값을 바꿔줘야 할 때)
+      //     let temp = arr[i];
+      //     arr[i] = arr[i + 1];
+      //     arr[i + 1] = temp;
+      //   }
+      //   console.log(arr);
+      // }
+      // console.log("===========================");
+
+      // // 2.STEP
+      // // 0 > 1, 1 > 2, 2 > 3
+      // for (let i = 0; i <= 2; i++) {
+      //   if (arr[i] > arr[i + 1]) {
+      //     // 치환 (두 변수값을 바꿔줘야 할 때)
+      //     let temp = arr[i];
+      //     arr[i] = arr[i + 1];
+      //     arr[i + 1] = temp;
+      //   }
+      //   console.log(arr);
+      // }
+      // console.log("===========================");
+      // // 3.STEP
+      // for (let i = 0; i <= 1; i++) {
+      //   if (arr[i] > arr[i + 1]) {
+      //     // 치환 (두 변수값을 바꿔줘야 할 때)
+      //     let temp = arr[i];
+      //     arr[i] = arr[i + 1];
+      //     arr[i + 1] = temp;
+      //   }
+      //   console.log(arr);
+      // }
+      // console.log("===========================");
+      // // 4.STEP
+      // for (let i = 0; i < 1; i++) {
+      //   if (arr[i] > arr[i + 1]) {
+      //     // 치환 (두 변수값을 바꿔줘야 할 때)
+      //     let temp = arr[i];
+      //     arr[i] = arr[i + 1];
+      //     arr[i + 1] = temp;
+      //   }
+      //   console.log(arr);
+      // }
+      // console.log("===========================");
+
+      // if (arr[0] > arr[1]) {
+      //   // [0] [1]
+      //   // 치환 (두 변수값을 바꿔줘야 할 때)
+      //   let temp = arr[0];
+      //   arr[0] = arr[1];
+      //   arr[1] = temp;
+      // }
+      // console.log(arr);
+      // if (arr[1] > arr[2]) {
+      //   // [1] [2]
+      //   let temp = arr[1];
+      //   arr[1] = arr[2];
+      //   arr[2] = temp;
+      // }
+      // console.log(arr);
+      // if (arr[2] > arr[3]) {
+      //   // [2] [3]
+      //   let temp = arr[2];
+      //   arr[2] = arr[3];
+      //   arr[3] = temp;
+      // }
+      // console.log(arr);
+      // if (arr[3] > arr[4]) {
+      //   // [3] [4]
+      //   let temp = arr[3];
+      //   arr[3] = arr[4];
+      //   arr[4] = temp;
+      // }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* dispaly
+      (1) block
+      -무조건 가로로 한줄의 영역을 차지하는 속성
+      -종류 : div, p , table ...등등 => 기본 값 block
+      - width, height 값 설정이 가능
+      
+      (2) inline
+      -내가 담은 컨텐츠(내용)까지만 크기로 삼는 속성
+      - width, height 값 설정이 불가능
+      - 종류 : span, a ..등등 => 기본 값 lnline
+      */
+
+      div,
+      span,
+      p {
+        width: 200px;
+        height: 200px;
+      }
+      div {
+        display: inline;
+        background-color: lightgreen;
+      }
+      span {
+        display: block;
+        background-color: lightcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div>div 태그</div>
+    <div>div 태그</div>
+    <div>div 태그</div>
+
+    <span>span 태그</span>
+    <span>span 태그</span>
+    <span>span 태그</span>
+
+    <p>p 태그</p>
+    <p>p 태그</p>
+    <p>p 태그</p>
+  </body>
+</html>

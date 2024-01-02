@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // startValue ~ endValue 숫자 중 소수를 출력하는 getPrimeNumber()메소드를 구현하세요.
+
+      let startNum = 2;
+      let endNum = 100;
+      function getPrimeNumber(startNum, endNum) {
+        let arr = []; // 빈 배열
+        // i 는 startNum 부터 endNum 까지 i++
+        for (let i = startNum; i <= endNum; i++) {
+          let cnt = 0; // 약수의 개수 초기화
+          // ===============
+          for (let j = 1; j <= i; j++) {
+            // j 는 1부터 startNum 값 까지
+            if (i % j == 0) {
+              cnt++;
+            }
+          }
+          // ================
+          if (cnt == 2) {
+            arr.push(i);
+          }
+        }
+        return arr;
+      }
+      console.log(getPrimeNumber(startNum, endNum));
+
+      for (let i = 1; i <= 15; i++) {
+        if (15 % i == 0) {
+          let conon = 0;
+          conon++;
+          console.log(conon);
+        }
+      }
+      //소수 판별 primeNumber
+
+      //   let num = 7;
+      //   //약수가 자기자신, 1 두개일때만 소수
+      //   function primeNumber(number) {
+      //     //number 의 약수 개수를 판단
+      //     //1. 나눴을때 나머지가 0
+      //     //2. 1보다 큰숫자
+      //     //3. 자기자신보다 같거나 작은숫자
+      //     //~언제부터~언제까지
+      //     let cnt = 0; //약수의 개수
+      //     for (let i = 1; i <= num; i++) {
+      //       if (num % i == 0) {
+      //         cnt++;
+      //       }
+      //     }
+      //     if (cnt == 2) {
+      //       console.log("소수입니다");
+      //     } else {
+      //       console.log("소수가아닙니다");
+      //     }
+      //   }
+      // }
+    </script>
+  </body>
+</html>

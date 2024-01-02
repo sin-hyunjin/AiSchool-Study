@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 반복분
+      우리는 왜 반복문이 필요할까?
+      개발자가 하기 싫어하는 일 => 같은 일 반복해서 하는거
+
+      (1) for문
+      -for ~ 하는 동안
+      for(초기화식 ; 종료조건; 증감식) {
+        반복할 때 까지 실행할 로직
+      }
+      - 계속해서 현재 상황, 조건을 비교하며 만족시킬 때 까지 반복을 진행한다.
+      */
+
+      console.log(1);
+      console.log(2);
+      console.log(3);
+      console.log(4);
+      console.log(5);
+
+      for (let i = 1; i <= 5; i++) {
+        console.log("for :", i);
+      }
+
+      /* 위 코드가 실행되는 흐름
+      1) 내 반복문의 카운터 역할을 하는 i 의 초기값 1로 지정
+      2) 현재 상태 i=1 / 조건에 만족/ => i++ 실행 / => 출력
+      3) 현재 상태 1=2 / 조건에 만족/ => i++ 실행 / => 출력
+      ... (반복) ...
+      4) 현재 상태 i=6 / 조건에 만족하지 않음 / => for문 탈출
+       */
+
+      //  예재! 1부터 1000까지 더한 값을 문서에 출력
+
+      let sum = 0; //전역변수
+      for (let i = 1; i <= 1000; i++) {
+        //지역변수
+        sum += i;
+      }
+
+      document.write(` 1부터 100까지 더한 값은 ${sum} 입니다.`);
+
+      console.log("sum :", sum);
+    </script>
+  </body>
+</html>

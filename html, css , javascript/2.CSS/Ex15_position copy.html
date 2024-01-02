@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 박스전체크기 */
+      #parent {
+        width: 200px;
+        height: 600px;
+        background-color: gray;
+      }
+      /* 각각의 박스 크키 */
+      .box {
+        width: 200px;
+        height: 200px;
+        color: aliceblue;
+        /* 텍스트 중앙정렬 */
+        text-align: center;
+        line-height: 200px;
+        font-weight: bold;
+      }
+      .child1 {
+        background-color: #ff4949;
+        /* position :relative 부모요소 즉 현재위치를 기준으로 박스의 위치변경 */
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+      .child2 {
+        background-color: #f9ca24;
+        /*  position : absolute 부모요소를 벗어나 웹페이지 모서리위치에서 시작함*/
+        position: absolute;
+        top: 30px;
+        left: 30px;
+      }
+      .chlid3 {
+        background-color: #0984e3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div#parent>div*3 -->
+    <div id="parent">
+      <div class="box child1">Child</div>
+      <div class="box child2">Child</div>
+      <div class="box chlid3">Child</div>
+    </div>
+  </body>
+</html>
